@@ -3,6 +3,7 @@
 # It should be run by config/default
 resources:
 - bases/controller.cloudovn.io_vpcs.yaml
+- bases/controller.cloudovn.io_underlaynetworks.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:

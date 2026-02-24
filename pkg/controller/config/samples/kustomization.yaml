@@ -1,4 +1,5 @@
 ## Append samples of your project ##
 resources:
 - controller_v1_vpc.yaml
+- controller_v1_underlaynetwork.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples

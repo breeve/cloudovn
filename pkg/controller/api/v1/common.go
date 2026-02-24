@@ -19,3 +19,15 @@ type ResourceStatus struct {
 	State   ResourceState `json:"state,omitempty"`
 	Message string        `json:"message,omitempty"`
 }
+
+const (
+	LabelKeyRegionID = "cloudovn.io/regionID"
+	LabelKeyAZID     = "cloudovn.io/zoneID"
+
+	LabelKeyHostNetworkEnable = "cloudovn.io/hostNetworkEnable"
+)
+
+const (
+	AnnotationKeyRegionName = "cloudovn.io.regionName"
+	AnnotationKeyAZName     = "cloudovn.io.zoneName"
+)
