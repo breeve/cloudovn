@@ -28,10 +28,15 @@ type VPCSpec struct {
 
 // VPCStatus defines the observed state of VPC.
 type VPCStatus struct {
+	ResourceStatus `json:",inline"`
 }
 
+// +genclient:nonNamespaced
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:printcolumn:name="State",type=string,JSONPath=`.status.state`
 
 // VPC is the Schema for the vpcs API
 type VPC struct {
@@ -50,6 +55,7 @@ type VPC struct {
 	Status VPCStatus `json:"status,omitzero"`
 }
 
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:object:root=true
 
 // VPCList contains a list of VPC

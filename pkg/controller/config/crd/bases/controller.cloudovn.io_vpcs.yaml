@@ -12,9 +12,13 @@ spec:
     listKind: VPCList
     plural: vpcs
     singular: vpc
-  scope: Namespaced
+  scope: Cluster
   versions:
-  - name: v1
+  - additionalPrinterColumns:
+    - jsonPath: .status.state
+      name: State
+      type: string
+    name: v1
     schema:
       openAPIV3Schema:
         description: VPC is the Schema for the vpcs API
@@ -47,6 +51,19 @@ spec:
             type: object
           status:
             description: status defines the observed state of VPC
+            properties:
+              message:
+                type: string
+              state:
+                enum:
+                - unspecified
+                - creating
+                - updating
+                - active
+                - deleting
+                - deleted
+                - failed
+                type: string
             type: object
         required:
         - spec
