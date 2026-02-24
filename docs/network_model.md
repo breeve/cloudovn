@@ -1,3 +1,0 @@
-- Underlay Network
-- Tenant VPC
-- Management VPC
