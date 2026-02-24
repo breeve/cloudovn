@@ -1,6 +1,4 @@
-# Development
-
-## Requrements
+# Requrements
 
 - Golang:
 
@@ -18,6 +16,8 @@
   Go OS/Arch:           linux/amd64
   ```
 
+# Controller
+
 ## Project Init
 
 ```
@@ -25,7 +25,7 @@ cd pkg/controller
 kubebuilder init --domain cloudovn.io --repo github.com/breeve/cloudovn/pkg/controller
 ```
 
-## create api
+## Create API
 
 ```
 cd pkg/controller
