@@ -2,8 +2,10 @@
 
 ![](./architecture.drawio.svg)
 
+- Management
+  - API: Provide RESTful/gRPC API
 - Controller
-  - API Layer: VPC, Subnet, ...
+  - Operator: VPC, Subnet, ...
   - CNI Manager: Pod, Service, ...
   - Network Topo: Config Network, IPAM, LS, LR, LB are the primary targets.
 - CNI Server
