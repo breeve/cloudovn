@@ -2,6 +2,15 @@
 
 ![](./architecture.drawio.svg)
 
+- Controller
+  - API Layer: VPC, Subnet, ...
+  - CNI Manager: Pod, Service, ...
+  - Network Topo: Config Network, IPAM, LS, LR, LB are the primary targets.
+- CNI Server
+  - Network Topo: Config Network, config instance NIC, such as add LSP to LS.
+- CNI Binary:
+  - Plugin Delegate: Integrate and proxy multiple CNI plugins to avoid plugin management chaos.
+
 # Domain Model
 
 ![](./domain_model.drawio.svg)
