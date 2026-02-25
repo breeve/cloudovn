@@ -13,6 +13,8 @@
 - CNI Binary:
   - Plugin Delegate: Integrate and proxy multiple CNI plugins to avoid plugin management chaos.
 
+> Should fix it, ref: https://ovn-kubernetes.io/design/architecture/#interconnect-mode-architecture-default
+
 # Domain Model
 
 ![](./domain_model.drawio.svg)
