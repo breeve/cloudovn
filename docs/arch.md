@@ -23,6 +23,8 @@
 
 # Underlay & Overlay Network
 
+![](./underlay_overlay_network.drawio.svg)
+
 # k8s network model
 
 > There are 4 distinct networking problems to solve:
@@ -44,7 +46,15 @@
 
 # CNI
 
+## Primary Network Model
+
+## Additional Network Model
+
+> https://kubeovn.github.io/docs/v1.15.x/start/non-primary-mode/
+
 # OVN-Client
+
+> https://github.com/kubeovn/kube-ovn/blob/release-1.15/pkg/ovs/ovn.go#L140
 
 ---
 
