@@ -53,3 +53,4 @@
 1. https://kubernetes.io/zh-cn/docs/concepts/cluster-administration/networking/
 1. https://github.com/kubernetes/design-proposals-archive/blob/main/network/networking.md
 1. https://kubernetes.io/zh-cn/docs/concepts/services-networking/
+1. https://kubeovn.github.io/docs/v1.15.x/vpc/vpc/#vpc-pod-livenessprobe-readinessprobe
