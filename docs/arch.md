@@ -36,7 +36,11 @@
 
 # Tenant VPC
 
+![](./vpc_tenant_topo.drawio.svg)
+
 # Management VPC
+
+![](./vpc_management_topo.drawio.svg)
 
 # CNI
 
