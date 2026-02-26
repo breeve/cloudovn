@@ -29,3 +29,16 @@ kubebuilder create api --group controller --version v1 --kind RouteTable
 kubebuilder create api --group controller --version v1 --kind Subnet
 
 ```
+
+# API
+
+```
+go install github.com/bufbuild/buf/cmd/buf@latest
+
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
+go install github.com/envoyproxy/protoc-gen-validate@latest
+
+# 打印下版本
+```

@@ -1,0 +1,10 @@
+version: v2
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/envoyproxy/protoc-gen-validate
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE

@@ -1,0 +1,29 @@
+syntax = "proto3";
+package cloudovn.io.management.v1;
+option go_package = "github.com/breeve/cloudovn/pkg/api/management/v1;management";
+
+import "google/api/annotations.proto";
+import "google/api/field_behavior.proto";
+import "validate/validate.proto";
+
+// VPCService
+service VPCService {
+	// CreateVPC
+    rpc CreateVPC(VPC) returns (VPC) {
+        option (google.api.http) = {
+            post: "/v1/vpcs"
+            body: "*"
+        };
+    }
+}
+
+// VPC
+message VPC {
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (validate.rules).string = {
+      pattern: "^[a-z]([-a-z0-9]*[a-z0-9])?$",
+      max_len: 63
+    }
+  ];
+}

@@ -1,0 +1,30 @@
+version: v2
+# managed 模式会自动根据你的 proto 定义修改 go_package
+# 这样你就不需要手动在每个插件里写复杂的 import 路径映射
+managed:
+  enabled: true
+
+plugins:
+  # 1. 生成基础 Go 结构体
+  - local: protoc-gen-go
+    out: .
+    opt: paths=source_relative
+
+  # 2. 生成 gRPC 服务接口
+  - local: protoc-gen-go-grpc
+    out: .
+    opt: paths=source_relative
+
+  # 3. 生成 gRPC-Gateway (将 gRPC 映射为 RESTful JSON API)
+  - local: protoc-gen-grpc-gateway
+    out: .
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true
+
+  # 4. 生成参数校验代码 (根据你的 validate.rules 生成 Validate() 方法)
+  - local: protoc-gen-validate
+    out: .
+    opt:
+      - lang=go
+      - paths=source_relative
