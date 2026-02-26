@@ -30,6 +30,9 @@ kubebuilder init --domain cloudovn.io --repo github.com/breeve/cloudovn/pkg/cont
 ```
 cd pkg/controller
 
-kubebuilder create api --group controller --version v1 --kind VPC
 kubebuilder create api --group controller --version v1 --kind UnderlayNetwork
+kubebuilder create api --group controller --version v1 --kind VPC
+kubebuilder create api --group controller --version v1 --kind RouteTable
+kubebuilder create api --group controller --version v1 --kind Subnet
+
 ```

@@ -38,11 +38,13 @@
 >
 > --- [k8s networking design](https://github.com/kubernetes/design-proposals-archive/blob/main/network/networking.md)
 
-# Tenant VPC
+# VPC
+
+## Tenant VPC
 
 ![](./vpc_tenant_topo.drawio.svg)
 
-# Management VPC
+## Management VPC
 
 ![](./vpc_management_topo.drawio.svg)
 
