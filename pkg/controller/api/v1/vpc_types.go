@@ -29,6 +29,8 @@ type VPCSpec struct {
 // VPCStatus defines the observed state of VPC.
 type VPCStatus struct {
 	ResourceStatus `json:",inline"`
+
+	LogicRouterName string `json:"logicRouterName,omitempty"`
 }
 
 // +genclient:nonNamespaced

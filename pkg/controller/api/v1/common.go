@@ -7,10 +7,7 @@ type ResourceState string
 
 const (
 	UNSPECIFIED ResourceState = "unspecified"
-	CREATING    ResourceState = "creating"
-	UPDATING    ResourceState = "updating"
 	ACTIVE      ResourceState = "active"
-	DELETING    ResourceState = "deleting"
 	DELETED     ResourceState = "deleted"
 	FAILED      ResourceState = "failed"
 )
@@ -25,6 +22,8 @@ const (
 	LabelKeyAZID     = "cloudovn.io/zoneID"
 
 	LabelKeyHostNetworkEnable = "cloudovn.io/hostNetworkEnable"
+
+	LabelKeyLogicRouterName = "cloudovn.io/logicRouterName"
 )
 
 const (
