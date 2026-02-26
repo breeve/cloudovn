@@ -15,3 +15,5 @@ controller:
 	make build -C pkg/controller
 	cp pkg/controller/bin/manager bin/controller
 
+
+build: management controller
