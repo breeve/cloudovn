@@ -34,11 +34,19 @@ kubebuilder create api --group controller --version v1 --kind Subnet
 
 ```
 go install github.com/bufbuild/buf/cmd/buf@latest
-
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
 go install github.com/envoyproxy/protoc-gen-validate@latest
 
-# 打印下版本
+(base) zhangfeng5@60237405W:~/github/cloudovn$ buf --version
+1.66.0
+(base) zhangfeng5@60237405W:~/github/cloudovn$ protoc-gen-go --version
+protoc-gen-go v1.36.6
+(base) zhangfeng5@60237405W:~/github/cloudovn$ protoc-gen-go-grpc --version
+protoc-gen-go-grpc 1.5.1
+(base) zhangfeng5@60237405W:~/github/cloudovn$ protoc-gen-grpc-gateway --version
+Version v2.27.1, commit unknown, built at unknown
+(base) zhangfeng5@60237405W:~/github/cloudovn$ go version -m $(which protoc-gen-validate) | grep protoc-gen-validate | grep mod
+        mod     github.com/envoyproxy/protoc-gen-validate       v1.2.1  h1:DEo3O99U8j4hBFwbJfrz9VtgcDfUKS7KJ7spH3d86P8
 ```
