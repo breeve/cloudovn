@@ -1,11 +1,13 @@
-module github.com/breeve/cloudovn/pkg/controller
+module github.com/breeve/cloudovn
 
 go 1.26.0
 
 require (
+	github.com/go-logr/logr v1.4.3
 	github.com/kubeovn/kube-ovn v1.15.4
 	github.com/onsi/ginkgo/v2 v2.27.3
 	github.com/onsi/gomega v1.38.3
+	github.com/spf13/cobra v1.10.2
 	k8s.io/apimachinery v0.34.3
 	k8s.io/client-go v0.34.3
 	sigs.k8s.io/controller-runtime v0.22.4
@@ -31,7 +33,6 @@ require (
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.9.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.11 // indirect
-	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-logr/zapr v1.3.0 // indirect
 	github.com/go-openapi/jsonpointer v0.22.4 // indirect
@@ -92,7 +93,6 @@ require (
 	github.com/prometheus/procfs v0.19.2 // indirect
 	github.com/scylladb/go-set v1.0.2 // indirect
 	github.com/smarty/assertions v1.16.0 // indirect
-	github.com/spf13/cobra v1.10.2 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/stoewer/go-strcase v1.3.1 // indirect
 	github.com/stretchr/testify v1.11.1 // indirect

@@ -64,6 +64,8 @@
 
 > http://kubevela.net/zh/
 
+# Log
+
 ---
 
 # Refs

@@ -7,6 +7,8 @@ import (
 	"k8s.io/apimachinery/pkg/api/equality"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
+
+	utilscommon "github.com/breeve/cloudovn/pkg/utils"
 )
 
 func AddFinalizer(ctx context.Context, log logr.Logger, c client.Client, deepCopyObject func() client.Object, finalizer string) error {
@@ -35,12 +37,12 @@ func PatchLabels(ctx context.Context, log logr.Logger, c client.Client, deepCopy
 	}
 
 	base := deepCopyObject()
-	if ContainsMaps(base.GetLabels(), labels) {
+	if utilscommon.ContainsMaps(base.GetLabels(), labels) {
 		return nil
 	}
 
 	patched := deepCopyObject()
-	patched.SetLabels(MergeMaps(base.GetLabels(), labels))
+	patched.SetLabels(utilscommon.MergeMaps(base.GetLabels(), labels))
 
 	patch := client.MergeFrom(base)
 	if err := c.Patch(ctx, patched, patch); client.IgnoreNotFound(err) != nil {
