@@ -18,13 +18,6 @@
 
 # Controller
 
-## Project Init
-
-```
-cd pkg/controller
-kubebuilder init --domain cloudovn.io --repo github.com/breeve/cloudovn/pkg/controller
-```
-
 ## Create API
 
 ```
