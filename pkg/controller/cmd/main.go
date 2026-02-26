@@ -178,21 +178,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err := (&controller.VPCReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "Failed to create controller", "controller", "VPC")
-		os.Exit(1)
-	}
-	if err := (&controller.UnderlayNetworkReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "Failed to create controller", "controller", "UnderlayNetwork")
-		os.Exit(1)
-	}
-	// +kubebuilder:scaffold:builder
+	setupManagers(mgr)
 
 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {
 		setupLog.Error(err, "Failed to set up health check")
@@ -208,4 +194,22 @@ func main() {
 		setupLog.Error(err, "Failed to run manager")
 		os.Exit(1)
 	}
+}
+
+func setupManagers(mgr ctrl.Manager) {
+	if err := (&controller.VPCReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "Failed to create controller", "controller", "VPC")
+		os.Exit(1)
+	}
+	if err := (&controller.UnderlayNetworkReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "Failed to create controller", "controller", "UnderlayNetwork")
+		os.Exit(1)
+	}
+	// +kubebuilder:scaffold:builder
 }
