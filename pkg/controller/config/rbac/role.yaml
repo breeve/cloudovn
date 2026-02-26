@@ -7,6 +7,8 @@ rules:
 - apiGroups:
   - controller.cloudovn.io
   resources:
+  - routetables
+  - subnets
   - underlaynetworks
   - vpcs
   verbs:
@@ -20,6 +22,8 @@ rules:
 - apiGroups:
   - controller.cloudovn.io
   resources:
+  - routetables/finalizers
+  - subnets/finalizers
   - underlaynetworks/finalizers
   - vpcs/finalizers
   verbs:
@@ -27,6 +31,8 @@ rules:
 - apiGroups:
   - controller.cloudovn.io
   resources:
+  - routetables/status
+  - subnets/status
   - underlaynetworks/status
   - vpcs/status
   verbs:

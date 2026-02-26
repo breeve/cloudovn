@@ -4,6 +4,8 @@
 resources:
 - bases/controller.cloudovn.io_vpcs.yaml
 - bases/controller.cloudovn.io_underlaynetworks.yaml
+- bases/controller.cloudovn.io_routetables.yaml
+- bases/controller.cloudovn.io_subnets.yaml
 # +kubebuilder:scaffold:crdkustomizeresource
 
 patches:

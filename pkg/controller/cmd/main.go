@@ -211,5 +211,19 @@ func setupManagers(mgr ctrl.Manager) {
 		setupLog.Error(err, "Failed to create controller", "controller", "UnderlayNetwork")
 		os.Exit(1)
 	}
+	if err := (&controller.RouteTableReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "Failed to create controller", "controller", "RouteTable")
+		os.Exit(1)
+	}
+	if err := (&controller.SubnetReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "Failed to create controller", "controller", "Subnet")
+		os.Exit(1)
+	}
 	// +kubebuilder:scaffold:builder
 }

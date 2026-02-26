@@ -1,0 +1,9 @@
+apiVersion: controller.cloudovn.io/v1
+kind: Subnet
+metadata:
+  labels:
+    app.kubernetes.io/name: controller
+    app.kubernetes.io/managed-by: kustomize
+  name: subnet-sample
+spec:
+  # TODO(user): Add fields here

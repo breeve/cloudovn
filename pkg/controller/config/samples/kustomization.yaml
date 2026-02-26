@@ -2,4 +2,6 @@
 resources:
 - controller_v1_vpc.yaml
 - controller_v1_underlaynetwork.yaml
+- controller_v1_routetable.yaml
+- controller_v1_subnet.yaml
 # +kubebuilder:scaffold:manifestskustomizesamples
