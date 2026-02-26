@@ -103,8 +103,6 @@ func (r *VPCReconciler) SetupWithManager(mgr ctrl.Manager) error {
 
 const (
 	VPCFinalizer = "cloudovn.io/vpc"
-
-	VPCLabelKeyLogicRouterName = "cloudovn.io/"
 )
 
 func (r *VPCReconciler) update(ctx context.Context, vpc *controllerv1.VPC) error {

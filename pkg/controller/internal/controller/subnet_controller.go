@@ -19,18 +19,24 @@ package controller
 import (
 	"context"
 
+	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
+	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
 	controllerv1 "github.com/breeve/cloudovn/pkg/controller/api/v1"
+	"github.com/breeve/cloudovn/pkg/controller/internal/utils"
+	"github.com/go-logr/logr"
 )
 
 // SubnetReconciler reconciles a Subnet object
 type SubnetReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
+
+	log logr.Logger
 }
 
 // +kubebuilder:rbac:groups=controller.cloudovn.io,resources=subnets,verbs=get;list;watch;create;update;patch;delete
@@ -43,21 +49,68 @@ type SubnetReconciler struct {
 // the Subnet object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.
-//
-// For more details, check Reconcile and its Result here:
-// - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.23.1/pkg/reconcile
 func (r *SubnetReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = logf.FromContext(ctx)
+	result := ctrl.Result{}
 
-	// TODO(user): your logic here
+	r.log.Info("reconile subnet", "name", req.NamespacedName.String())
 
-	return ctrl.Result{}, nil
+	subnet := &controllerv1.Subnet{}
+	if err := r.Client.Get(ctx, req.NamespacedName, subnet); err != nil {
+		if errors.IsNotFound(err) {
+			return result, nil
+		}
+		r.log.Error(err, "failed to get subnet", "name", req.NamespacedName.String())
+		return result, err
+	}
+
+	if subnet.DeletionTimestamp.IsZero() {
+		// 1. finalizer
+		if !controllerutil.ContainsFinalizer(subnet, SubnetFinalizer) {
+			r.log.Info("subnet add finalizer", "name", req.NamespacedName.String(), "finalizer", SubnetFinalizer)
+			if err := utils.AddFinalizer(ctx, r.log, r.Client, func() client.Object { return subnet.DeepCopy() }, SubnetFinalizer); err != nil {
+				r.log.Error(err, "failed to add finalizer", "name", req.NamespacedName.String())
+				return result, err
+			}
+			return result, nil
+		}
+
+		// 2. update
+		if err := r.update(ctx, subnet); err != nil {
+			return result, err
+		}
+
+		return result, nil
+	}
+
+	// 3. delete
+	if err := r.delete(ctx, subnet); err != nil {
+		return result, err
+	}
+
+	return result, nil
 }
 
 // SetupWithManager sets up the controller with the Manager.
 func (r *SubnetReconciler) SetupWithManager(mgr ctrl.Manager) error {
+	log := logf.FromContext(context.Background())
+	r.log = log
+
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&controllerv1.Subnet{}).
 		Named("subnet").
 		Complete(r)
+}
+
+const (
+	SubnetFinalizer = "cloudovn.io/subnet"
+)
+
+func (r *SubnetReconciler) update(ctx context.Context, subnet *controllerv1.Subnet) error {
+	// TODO(flynn): Impl it.
+	return nil
+}
+
+func (r *SubnetReconciler) delete(ctx context.Context, subnet *controllerv1.Subnet) error {
+	// TODO(flynn): Impl it.
+	return nil
 }
