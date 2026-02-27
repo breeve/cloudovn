@@ -19,9 +19,16 @@ controller: go
 gateway: go
 	go build -o bin/gateway-agent pkg/gateway/agent/main.go
 
-.PHONY: gateway_schema
-gateway_schema:
-	modelgen -p schema -o pkg/gateway/schema pkg/gateway/schema/gateway.ovsschema
-
 .PHONY: build
 build: management controller gateway
+
+################################################################
+# Archived                                                     #
+################################################################
+
+.PHONY: go_c_ovsdb_schema
+go_c_ovsdb_schema:
+	modelgen -p schema -o archived/go_c_ovsdb/schema archived/go_c_ovsdb/schema/gateway.ovsschema
+
+go_c_ovsdb_client: go_c_ovsdb_schema go
+	go build -o archived/go_c_ovsdb/bin/client archived/go_c_ovsdb/client/client.go
