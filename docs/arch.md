@@ -69,6 +69,10 @@
 # eBPF
 
 > https://ebpf-go.dev/
+> https://github.com/cilium/ebpf/tree/main/examples
+> https://docs.ebpf.io/linux/
+> https://github.com/xdp-project/xdp-tools/blob/main/lib/libxdp/README.org
+> https://github.com/libbpf/libbpf
 
 ---
 
