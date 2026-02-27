@@ -11,13 +11,17 @@ management_api:
 	cd pkg/api/management/v1; rm -f *.go; buf dep update; buf generate
 
 .PHONY: controller
-controller:
+controller: go
 	make build -C pkg/controller
 	cp pkg/controller/bin/manager bin/controller
+
+.PHONY: gateway
+gateway: go
+	go build -o bin/gateway-agent pkg/gateway/agent/main.go
 
 .PHONY: gateway_schema
 gateway_schema:
 	modelgen -p schema -o pkg/gateway/schema pkg/gateway/schema/gateway.ovsschema
 
 .PHONY: build
-build: management controller
+build: management controller gateway

@@ -237,8 +237,6 @@ github.com/kubeovn/arp v0.0.0-20240218024213-d9612a263f68 h1:hdtqlnTzx6lN8GHfoUo
 github.com/kubeovn/arp v0.0.0-20240218024213-d9612a263f68/go.mod h1:2lfnKfjihqd5su63Y81hHEdrVGFtfSU9ABXCibCjgO4=
 github.com/kubeovn/kube-ovn v1.15.4 h1:yBxMraUzNlX/q8Y7o+2PSY5+G7IEx2wgo3yusSnIAN8=
 github.com/kubeovn/kube-ovn v1.15.4/go.mod h1:u9COU9100VjkLyMcX802Ph+pd0Oh+Lk6A2R5K7xMIUs=
-github.com/kubeovn/libovsdb v0.0.0-20251212071713-cb1c2bc5d43e h1:/DjPaByhzfDJcJ8A9jqoi16q/O1N5nGOHy9VmNZVnVM=
-github.com/kubeovn/libovsdb v0.0.0-20251212071713-cb1c2bc5d43e/go.mod h1:uqOuVsuGSJPoHDOS5O9VkJz/TIPm6Az/YZesHZ3qwDw=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=
 github.com/kylelemons/godebug v1.1.0/go.mod h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=
 github.com/ledongthuc/pdf v0.0.0-20220302134840-0c2507a12d80/go.mod h1:imJHygn/1yfhB7XSJJKlFZKl/J+dCPAknuiaGOshXAs=
@@ -339,6 +337,8 @@ github.com/onsi/gomega v1.38.3/go.mod h1:ZCU1pkQcXDO5Sl9/VVEGlDyp+zm0m1cmeG5TOzL
 github.com/openshift/custom-resource-status v1.1.2 h1:C3DL44LEbvlbItfd8mT5jWrqPfHnSOQoQf/sypqA6A4=
 github.com/openshift/custom-resource-status v1.1.2/go.mod h1:DB/Mf2oTeiAmVVX1gN+NEqweonAPY0TKUwADizj8+ZA=
 github.com/orisano/pixelmatch v0.0.0-20220722002657-fb0b55479cde/go.mod h1:nZgzbfBr3hhjoZnS66nKrHmduYNpc34ny7RK4z5/HM0=
+github.com/ovn-kubernetes/libovsdb v0.8.1 h1:M2J8bcJt5mXCom0HqzfEtuHkT80CTSQRcYG7acT8gf4=
+github.com/ovn-kubernetes/libovsdb v0.8.1/go.mod h1:ZlnHLzagmLOSvyd9qfxBIZp6wOSOw0IsRsc+6lNUGbU=
 github.com/parnurzeal/gorequest v0.3.0 h1:SoFyqCDC9COr1xuS6VA8fC8RU7XyrJZN2ona1kEX7FI=
 github.com/parnurzeal/gorequest v0.3.0/go.mod h1:3Kh2QUMJoqw3icWAecsyzkpY7UzRfDhbRdTjtNwNiUE=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
