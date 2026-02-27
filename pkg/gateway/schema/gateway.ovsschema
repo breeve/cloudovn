@@ -1,0 +1,11 @@
+{
+  "name": "CloudGateway",
+  "tables": {
+    "RouteTable": {
+      "columns": {
+        "name": {"type": "string"}
+      },
+      "indexes": [["name"]]
+    }
+  }
+}

@@ -9,6 +9,7 @@ require (
 	github.com/kubeovn/kube-ovn v1.15.4
 	github.com/onsi/ginkgo/v2 v2.27.3
 	github.com/onsi/gomega v1.38.3
+	github.com/ovn-kubernetes/libovsdb v0.8.1
 	github.com/spf13/cobra v1.10.2
 	google.golang.org/genproto/googleapis/api v0.0.0-20251202230838-ff82c1b0f217
 	google.golang.org/grpc v1.78.0
@@ -87,7 +88,6 @@ require (
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f // indirect
 	github.com/openshift/custom-resource-status v1.1.2 // indirect
-	github.com/ovn-kubernetes/libovsdb v0.8.1 // indirect
 	github.com/parnurzeal/gorequest v0.3.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect

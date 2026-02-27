@@ -15,5 +15,9 @@ controller:
 	make build -C pkg/controller
 	cp pkg/controller/bin/manager bin/controller
 
+.PHONY: gateway_schema
+gateway_schema:
+	modelgen -p schema -o pkg/gateway/schema pkg/gateway/schema/gateway.ovsschema
 
+.PHONY: build
 build: management controller

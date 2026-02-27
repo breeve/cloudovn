@@ -50,3 +50,13 @@ Version v2.27.1, commit unknown, built at unknown
 (base) zhangfeng5@60237405W:~/github/cloudovn$ go version -m $(which protoc-gen-validate) | grep protoc-gen-validate | grep mod
         mod     github.com/envoyproxy/protoc-gen-validate       v1.2.1  h1:DEo3O99U8j4hBFwbJfrz9VtgcDfUKS7KJ7spH3d86P8
 ```
+
+# schema
+
+```
+(base) zhangfeng5@60237405W:~/github/cloudovn$ go install github.com/ovn-kubernetes/libovsdb/cmd/modelgen@latest
+go: downloading golang.org/x/text v0.22.0
+(base) zhangfeng5@60237405W:~/github/cloudovn$ go version -m $(which modelgen) | grep modelgen | grep mod
+/home/zhangfeng5/go/bin/modelgen: go1.26.0
+        path    github.com/ovn-kubernetes/libovsdb/cmd/modelgen
+```
