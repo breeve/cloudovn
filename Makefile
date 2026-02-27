@@ -16,8 +16,16 @@ controller: go
 	cp pkg/controller/bin/manager bin/controller
 
 .PHONY: gateway
-gateway: go
+gateway: go gateway_agent
+
+.PHONY: gateway_agent
+gateway_agent:
+	cd  pkg/gateway/dataplane; go generate
 	go build -o bin/gateway-agent pkg/gateway/agent/main.go
+
+.PHONY: gateway_dataplane_vmlinux_h
+gateway_dataplane_vmlinux_h:
+	/usr/lib/linux-tools/6.8.0-101-generic/bpftool btf dump file /sys/kernel/btf/vmlinux format c > pkg/gateway/dataplane/vmlinux.h
 
 .PHONY: build
 build: management controller gateway

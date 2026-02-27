@@ -60,3 +60,21 @@ go: downloading golang.org/x/text v0.22.0
 /home/zhangfeng5/go/bin/modelgen: go1.26.0
         path    github.com/ovn-kubernetes/libovsdb/cmd/modelgen
 ```
+
+# eBPF
+
+```
+(base) zhangfeng5@60237405W:~/github/cloudovn/pkg/gateway/dataplane$ go get github.com/cilium/ebpf/cmd/bpf2go
+go: added github.com/cilium/ebpf v0.20.0
+(base) zhangfeng5@60237405W:~/github/cloudovn$ sudo apt install clang llvm
+(base) zhangfeng5@60237405W:~/github/cloudovn$ sudo apt install libbpf-dev libelf-dev zlib1g-dev
+
+sudo apt install linux-tools-common linux-tools-generic
+# 针对 WSL2 的特定包
+sudo apt install linux-tools-virtual hwdata
+
+(base) zhangfeng5@60237405W:~/github/cloudovn$ go install github.com/cilium/ebpf/cmd/bpf2go@latest
+(base) zhangfeng5@60237405W:~/github/cloudovn$ go version -m $(which bpf2go) | grep ebpf | grep mod
+        mod     github.com/cilium/ebpf  v0.20.0 h1:atwWj9d3NffHyPZzVlx3hmw1on5CLe9eljR8VuHTwhM=
+
+```
