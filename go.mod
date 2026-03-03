@@ -3,6 +3,7 @@ module github.com/breeve/cloudovn
 go 1.26.0
 
 require (
+	github.com/cilium/ebpf v0.20.0
 	github.com/envoyproxy/protoc-gen-validate v1.2.1
 	github.com/go-logr/logr v1.4.3
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.3
@@ -30,7 +31,6 @@ require (
 	github.com/cenkalti/hub v1.0.2 // indirect
 	github.com/cenkalti/rpc2 v1.0.5 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
-	github.com/cilium/ebpf v0.20.0 // indirect
 	github.com/containernetworking/cni v1.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/digitalocean/go-openvswitch v0.0.0-20251118231545-85aec29b8ee6 // indirect
