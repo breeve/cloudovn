@@ -81,6 +81,20 @@ sudo apt install linux-tools-virtual hwdata
 
 # kind
 
+[kind k8s](../test/k8s/readme.md)
+
 ```
-go install sigs.k8s.io/kind@v0.31.0 && kind create cluster
+go install sigs.k8s.io/kind@v0.31.0
+kind create cluster
+(base) zhangfeng5@60237405W:~/github/cloudovn$ kubectl get nodes
+NAME                 STATUS   ROLES           AGE     VERSION
+kind-control-plane   Ready    control-plane   3m32s   v1.35.0
+(base) zhangfeng5@60237405W:~/github/cloudovn$ docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS         PORTS                       NAMES
+b420f0174a2e   kindest/node:v1.35.0   "/usr/local/bin/entr…"   6 minutes ago   Up 6 minutes   127.0.0.1:40233->6443/tcp   kind-control-plane
+(base) zhangfeng5@60237405W:~/github/cloudovn$ docker exec -ti kind-control-plane bash
+root@kind-control-plane:/#
+(base) zhangfeng5@60237405W:~/github/cloudovn$ kind delete cluster
+Deleting cluster "kind" ...
+Deleted nodes: ["kind-control-plane"]
 ```
