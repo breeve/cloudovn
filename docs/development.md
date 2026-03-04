@@ -78,3 +78,9 @@ sudo apt install linux-tools-virtual hwdata
         mod     github.com/cilium/ebpf  v0.20.0 h1:atwWj9d3NffHyPZzVlx3hmw1on5CLe9eljR8VuHTwhM=
 
 ```
+
+# kind
+
+```
+go install sigs.k8s.io/kind@v0.31.0 && kind create cluster
+```
